@@ -12,10 +12,11 @@ describe('testing shortid', function(done) {
     });
 
     var i;
-    for (i=1; i < 11; i++) {
+    for (i=1; i < 20; i++) {
         var id = shortid.generate();
-        it(i + ') should print 10 examples: ' + id, function(done){
+        it('should print 20 examples: ' + id, function(done){
             expect(id).to.not.be.empty;
+            expect(id).to.length(12);
             expect(shortid.isValid(id)).to.equal(true);
             //TODO: check if valid id
             done();

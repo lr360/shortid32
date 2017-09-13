@@ -17,10 +17,10 @@ describe('testing shortid', function(done) {
         var ids = {};
         var id;
 
-        var i=5000;
+        var i=4000;
         while(i--) {
             id = shortid.generate();
-            expect(id.length).to.be.below(17);
+            expect(id.length).to.equal(12);
             ids[id] = ids[id] ? ids[id]++ : 1;
             expect(ids[id]).to.equal(1);
         }
